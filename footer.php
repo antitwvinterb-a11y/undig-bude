@@ -79,14 +79,14 @@
     <div class="org-title">Organized by</div>
     
     <div class="logo-container">
-        <img src="logo-jurnal.png" alt="jurnal Logo" class="logo-img">
+        <img src="assets/image/logo-jurnal.png" alt="jurnal Logo" class="logo-img">
     </div>
 
     <div class="social-icons">
-        <a href="https://instagram.com/username_anda" target="_blank" aria-label="Instagram">
+        <a href="https://instagram.com/jurnal.inv" target="_blank" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/6283199454804" target="_blank" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
