@@ -814,7 +814,7 @@ a{color:inherit;}
 
 <!-- audio -->
 <audio id="bgMusic" loop preload="auto">
-  <source src="assets/audio/kasih-putih.mp3" type="audio/mpeg">
+  <source src="assets/audio/doa.mp3" type="audio/mpeg">
 </audio>
 
 <script>
