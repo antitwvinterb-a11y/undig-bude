@@ -440,11 +440,15 @@ section + section{
 /* gallery */
 .gallery{
   margin-top:24px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  align-items:center;
 }
-.gallery figure{margin:0;}
+.gallery figure{
+  margin:0;
+  width:76%;
+}
 .gallery img{
   width:100%;display:block;object-fit:cover;
   border:1px solid rgba(205,168,94,.3);
@@ -808,6 +812,11 @@ a{color:inherit;}
   </div>
 </div>
 
+<!-- audio -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/audio/kasih-putih.mp3" type="audio/mpeg">
+</audio>
+
 <script>
 /* ---------- guest name from ?to= ---------- */
 (function(){
@@ -969,6 +978,24 @@ document.getElementById('f-submit').addEventListener('click', async ()=>{
 });
 
 loadWishes();
+
+/* ---------- autoplay musik saat halaman dibuka ---------- */
+(function(){
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.55;
+  // Coba autoplay langsung
+  music.play().catch(function(){
+    // Browser blokir autoplay sebelum interaksi user —
+    // fallback: play saat user pertama kali menyentuh/klik halaman
+    function tryPlay(){
+      music.play();
+      document.removeEventListener('click', tryPlay);
+      document.removeEventListener('touchstart', tryPlay);
+    }
+    document.addEventListener('click', tryPlay);
+    document.addEventListener('touchstart', tryPlay);
+  });
+})();
 </script>
 </body>
 </html>
