@@ -17,10 +17,10 @@
         }
 
         .wedding-footer .org-title {
-            font-size: 0,3rem;
+            font-size: 0 rem;
             margin-bottom: 10px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            font-weight: 100;
+            letter-spacing: 0;
         }
 
         .wedding-footer .logo-container {
@@ -28,23 +28,16 @@
         }
 
         .wedding-footer .logo-img {
-            max-width: 180px; /* Sesuaikan dengan ukuran logo asli Anda */
+            max-width: 160px; /* Sesuaikan dengan ukuran logo asli Anda */
             height: auto;
             margin-bottom: 0;
-        }
-
-        .wedding-footer .tagline {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
         }
 
         .wedding-footer .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: 0;
+            margin-bottom: 20px;
         }
 
         .wedding-footer .social-icons a {
@@ -67,9 +60,9 @@
         }
 
         .wedding-footer .credit {
-            font-size: 1.4rem;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 1 rem;
+            font-weight: 300;
+            letter-spacing: 0,5px;
         }
     </style>
 </head>
