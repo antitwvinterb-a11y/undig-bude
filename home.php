@@ -63,7 +63,7 @@ body{
 /* ---------- ornaments ---------- */
 .mandala{
   display:block;
-  margin:0 auto;
+  margin-bottom:16px;
   animation:spin 90s linear infinite;
 }
 @media (prefers-reduced-motion: reduce){ .mandala{animation:none;} }
@@ -291,7 +291,7 @@ section + section{
 .profile-name{
   text-align:center;
   font-family:'Cormorant Garamond',serif;
-  font-size:30px;
+  font-size:25px;
   margin-top:20px;
   color:var(--cream);
 }
@@ -620,7 +620,7 @@ a{color:inherit;}
     object-fit: cover; 
     pointer-events: none; /* SANGAT PENTING: Agar tidak menghalangi klik tombol/scroll */
     z-index: 9998; 
-    opacity: 0.06; /* Atur tingkat transparansi (0.1 sampai 1.0) */
+    opacity: 0.1; /* Atur tingkat transparansi (0.1 sampai 1.0) */
 }
 </style>
 </head>
@@ -996,22 +996,50 @@ document.getElementById('f-submit').addEventListener('click', async ()=>{
 
 loadWishes();
 
-/* ---------- autoplay musik saat halaman dibuka ---------- */
-(function(){
-  const music = document.getElementById('bgMusic');
-  music.volume = 0.55;
-  // Coba autoplay langsung
-  music.play().catch(function(){
-    // Browser blokir autoplay sebelum interaksi user —
-    // fallback: play saat user pertama kali menyentuh/klik halaman
-    function tryPlay(){
-      music.play();
-      document.removeEventListener('click', tryPlay);
-      document.removeEventListener('touchstart', tryPlay);
+/* ---------- Logika Musik: Volume, Fade-in, dan Loop ---------- */
+(function() {
+    const music = document.getElementById('bgMusic');
+    
+    // 1. Atur Volume (0.0 sampai 1.0)
+    // 0.3 artinya 30% volume, tidak terlalu keras
+    music.volume = 0.05; 
+    music.loop = true;
+
+    function playMusic() {
+        // 2. Logika Fade-in (Masuk pelan)
+        // Set volume awal ke 0
+        music.volume = 0;
+        music.play().then(() => {
+            // Naikkan volume perlahan (Fade-in)
+            let fadeIn = setInterval(() => {
+                if (music.volume < 0.05) {
+                    music.volume = Math.min(music.volume + 0.01, 0.05);
+                } else {
+                    clearInterval(fadeIn);
+                }
+            }, 200); // Naikkan volume setiap 200ms
+        }).catch(e => console.log("Autoplay diblokir, menunggu klik user"));
     }
-    document.addEventListener('click', tryPlay);
-    document.addEventListener('touchstart', tryPlay);
-  });
+
+    // 3. Pemicu Musik (saat tombol Buka Undangan diklik)
+    const openBtn = document.getElementById('openBtn');
+    if (openBtn) {
+        openBtn.addEventListener('click', function() {
+            playMusic();
+            // ... (logika lainnya untuk buka undangan)
+        });
+    }
+
+    // 4. Logika Background (Visibility Change)
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+            music.pause();
+        } else {
+            // Saat kembali, langsung mainkan (tanpa fade-in ulang agar tidak mengganggu)
+            music.volume = 0.05;
+            music.play();
+        }
+    });
 })();
 </script>
 </body>
