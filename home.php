@@ -609,6 +609,19 @@ footer{
 .footer-credit b{color:var(--gold-dim);font-weight:400;}
 
 a{color:inherit;}
+
+/* --- CSS UNTUK OVERLAY EFEK MP4 --- */
+.efek-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    pointer-events: none; /* SANGAT PENTING: Agar tidak menghalangi klik tombol/scroll */
+    z-index: 9998; 
+    opacity: 0.06; /* Atur tingkat transparansi (0.1 sampai 1.0) */
+}
 </style>
 </head>
 <body>
@@ -652,7 +665,11 @@ a{color:inherit;}
   <!-- ============ CONTENT ============ -->
   <div id="content">
 
-    <section id="pembuka">
+  <video class="efek-overlay" autoplay loop muted playsinline>
+        <source src="assets/image/efek-emas.mp4" type="video/mp4">
+    </video>
+
+    <section id="pembuka" class="animate-on-scroll">
       <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
       <p class="lede">
         Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
