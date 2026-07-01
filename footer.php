@@ -11,26 +11,26 @@
             background-color: black; /* Warna background hijau sage */
             color: #ecd089; /* Warna teks putih */
             text-align: center;
-            padding: 50px 20px;
+            padding: 10px 0;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .wedding-footer .org-title {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            font-weight: 500;
+            font-size: 0,3rem;
+            margin-bottom: 10px;
+            font-weight: 400;
             letter-spacing: 0.5px;
         }
 
         .wedding-footer .logo-container {
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .wedding-footer .logo-img {
-            max-width: 220px; /* Sesuaikan dengan ukuran logo asli Anda */
+            max-width: 180px; /* Sesuaikan dengan ukuran logo asli Anda */
             height: auto;
-            margin-bottom: 5px;
+            margin-bottom: 0;
         }
 
         .wedding-footer .tagline {
