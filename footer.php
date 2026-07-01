@@ -12,6 +12,7 @@
             color: #ecd089; /* Warna teks putih */
             text-align: center;
             padding: 50px 20px;
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
