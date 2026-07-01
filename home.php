@@ -748,11 +748,8 @@ a{color:inherit;}
       <div class="section-title">Kenangan Kami</div>
       <div class="gallery">
         <figure class="photo-family">
-<<<<<<< HEAD
           <img src="image/ft1.png" alt="Foto Keluarga">
-=======
           <img src="assets/image/ft2.png" alt="Keluarga Bpk. Alim & Ibu Hetin">
->>>>>>> 802a4e71fc4caf573dfdd2b93050a215422c3c64
           <figcaption>Keluarga Bpk. Alim &amp; Ibu Hetin</figcaption>
         </figure>
         <figure class="photo-child">
